@@ -1,0 +1,52 @@
+<html>
+	<head>
+        <style>
+            #mo{
+                text-align: center;
+                border: 2px solid;
+                margin-top: 150px;
+                margin-left: 50px;
+                margin-right: 50px;
+                background-color: #e632c8;
+            }
+            #top{
+                background-color:rgb(118, 14, 144);
+            }
+        </style>
+		
+	</head>
+	<body id="top">
+      <section id="mo">
+        <h1> PALINDROME</h1>
+		Enter The Number : <input type="text" name="n" id = "N"/>
+		
+		<br><br>
+		<button onClick="Palindrome()">CHECK</button>
+        <h1 id="ca"></h1>
+      </section>
+	</body>
+    <script>
+        function Palindrome()
+        {
+            var rem, temp, final = 0;
+            var number = Number(document.getElementById("N").value);
+
+            temp = number;
+            while(number>0)
+            {
+                rem = number%10;
+                number = parseInt(number/10);
+                final = final*10+rem;
+            }
+            if(final==temp)
+            {
+                document.getElementById("ca").innerHTML= final +"  IS PALINDROME"
+            }
+            else
+            {
+                document.getElementById("ca").innerHTML= final + "  IS NOT PALINDROME "
+                
+            }
+        }
+    </script>
+</html>
